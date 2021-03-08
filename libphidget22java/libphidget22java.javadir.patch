@@ -1,0 +1,12 @@
+--- libphidget22java-1.6.20201117/Makefile.in	2020-11-17 17:45:58.000000000 +0100
++++ libphidget22java-1.6.20201117/Makefile.in.new	2021-03-08 13:28:26.341814021 +0100
+@@ -1604,7 +1604,8 @@
+ @RUN_LDCONFIG_TRUE@	-$(LDCONFIG)
+ 
+ install-data-hook:
+-	if [ -e phidget22.jar ]; then install --owner=root --mode=755 -d $(DESTDIR)/usr/java/packages/lib/ext; install --owner=root --mode=755 -d $(DESTDIR)/usr/share/java; install --owner=root --mode=644 phidget22.jar $(DESTDIR)/usr/share/java; install --owner=root --mode=644 phidget22.jar $(DESTDIR)/usr/java/packages/lib/ext; fi
++	if [ -e phidget22.jar ]; then install --mode=755 -d $(DESTDIR)/usr/lib/java; install -p --mode=644 phidget22.jar $(DESTDIR)/usr/lib/java; fi
++ 
+ 
+ phidget22.jar:
+ 	@echo "Making $@"
